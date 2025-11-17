@@ -1,0 +1,270 @@
+/* ================================
+   GLOBAL THEME + BASE STYLES
+================================ */
+:root {
+  --bg: #0f1720;
+  --panel: #14181d;
+  --panel-2: #101418;
+  --border: #242a2f;
+  --accent: #00e0ff;
+  --muted: #9aa3b1;
+  --text: #e9f0f8;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ================================
+   TOP BAR
+================================ */
+header.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--panel);
+  border-bottom: 1px solid var(--border);
+  padding: 8px 16px;
+}
+
+.top-left .brand {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--accent);
+}
+
+.top-center {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang-label {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.language-select {
+  background: var(--panel-2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 5px 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.top-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.run-btn {
+  background: var(--accent);
+  color: #000;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: 0.2s;
+}
+
+.run-btn:hover {
+  opacity: 0.9;
+}
+
+.icon-btn {
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.icon-btn:hover {
+  color: var(--accent);
+}
+
+/* ================================
+   MAIN CONTAINER
+================================ */
+.main-container {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* ================================
+   SPLIT CONTAINER
+================================ */
+.split-container {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* LEFT PANE (Editor) */
+.left-pane {
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  background: var(--panel);
+  min-width: 260px;
+  border-right: 1px solid var(--border);
+  transition: width 0.1s ease;
+}
+
+.editor-header {
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+#editor {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  background: var(--panel);
+}
+
+/* GUTTER (Vertical Divider) */
+#gutter {
+  width: 5px;
+  background: var(--border);
+  cursor: col-resize;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+#gutter:hover {
+  background: var(--accent);
+  box-shadow: 0 0 5px var(--accent);
+}
+
+/* RIGHT PANE */
+.right-pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--panel-2);
+  min-width: 300px;
+  overflow: hidden;
+  border-left: 1px solid var(--border);
+  transition: width 0.1s ease;
+}
+
+/* Output & Input Sections */
+.output-section, .input-section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.section-header {
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.section-content {
+  flex: 1;
+  overflow: auto;
+  padding: 8px;
+  font-family: monospace;
+  font-size: 14px;
+  color: var(--text);
+}
+
+/* Output Area */
+.output-area {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Input Area */
+.input-area {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--text);
+  font-family: monospace;
+  font-size: 14px;
+  padding: 8px;
+}
+
+/* Horizontal Gutter */
+#gutterV {
+  height: 5px;
+  background: var(--border);
+  cursor: row-resize;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+#gutterV:hover {
+  background: var(--accent);
+  box-shadow: 0 0 5px var(--accent);
+}
+
+/* ================================
+   FOOTER / STATUS BAR
+================================ */
+footer.statusbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+  background: var(--panel);
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.status-right span {
+  margin-left: 16px;
+}
+
+/* ================================
+   LIGHT THEME
+================================ */
+body.light-theme {
+  --bg: #f6f7f8;
+  --panel: #ffffff;
+  --panel-2: #f1f2f3;
+  --border: #d1d5db;
+  --accent: #0078ff;
+  --text: #111;
+  --muted: #444;
+}
+
+/* ================================
+   THEME ICON ANIMATION
+================================ */
+#themeToggle i {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+#themeToggle:hover i {
+  transform: rotate(25deg);
+  color: var(--accent);
+}

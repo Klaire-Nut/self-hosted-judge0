@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Judge0 Clone IDE</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a2e0e6a36b.js" crossorigin="anonymous"></script>
+
+  <!-- Monaco Editor loader -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs/loader.min.js"></script>
+</head>
+
+<body>
+  <!-- ================= TOP BAR ================= -->
+  <header class="topbar">
+    <div class="top-left">
+      <div class="brand">Judge0 Clone</div>
+    </div>
+
+    <div class="top-center">
+      <label class="lang-label" for="languageSelect">Language</label>
+      <select id="languageSelect" class="language-select" aria-label="language picker"></select>
+    </div>
+
+    <div class="top-right">
+      <button id="runBtn" class="run-btn">
+        <i class="fas fa-play"></i> Run
+      </button>
+
+      <!-- Theme toggle -->
+      <button id="themeToggle" class="icon-btn" title="Toggle Theme">
+        <i id="themeIcon" class="fas fa-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= MAIN CONTAINER ================= -->
+  <main class="main-container">
+    <div class="split-container">
+
+      <!-- LEFT: Code Editor -->
+      <section class="left-pane">
+        <div class="editor-header">Editor</div>
+        <div id="editor" class="editor"></div>
+      </section>
+
+      <!-- Vertical Divider -->
+      <div id="gutter" class="resize-handle-horizontal" title="Drag to resize editor/output"></div>
+
+      <!-- RIGHT: Output + Input -->
+      <aside class="right-pane">
+        <!-- Output Section -->
+        <div class="output-section" id="outputSection">
+          <div class="section-header">Output</div>
+          <div class="section-content">
+            <pre id="outputArea" class="output-area">Run your code to show output here...</pre>
+          </div>
+        </div>
+
+        <!-- Horizontal Divider -->
+        <div id="gutterV" class="resize-handle-vertical" title="Drag to resize input/output"></div>
+
+        <!-- Input Section -->
+        <div class="input-section" id="inputSection">
+          <div class="section-header">Input</div>
+          <div class="section-content">
+            <textarea id="inputArea" class="input-area" placeholder="Enter input here"></textarea>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- ================= FOOTER / STATUS ================= -->
+  <footer class="statusbar">
+    <div class="status-left">
+      <span id="statusText">Status: idle</span>
+    </div>
+    <div class="status-right">
+      <span id="execTime">Execution time: -</span>
+      <span id="memoryUsed">Memory: -</span>
+    </div>
+  </footer>
+
+  <!-- ================= SCRIPT ================= -->
+  <script src="script.js"></script>
+</body>
+</html>
