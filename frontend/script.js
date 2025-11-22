@@ -1,6 +1,7 @@
 // ====== FRONTEND SCRIPT FOR JUDGE0 CLONE IDE ======
 
-const lambdaUrl = "https://uflyndhnr4oprxiymevepyha3a0wtpkq.lambda-url.ap-southeast-2.on.aws/";
+// Replace the URL below with your own AWS Lambda function URL
+// const lambdaUrl = "https://uflyndhnr4oprxiymevepyha3a0wtpkq.lambda-url.ap-southeast-2.on.aws/"; 
 
 // ========== Language Setup ==========
 const languages = [
